@@ -1,18 +1,26 @@
+import { Geolocation } from '@ionic-native/geolocation';
+import { GoogleMaps, GoogleMap, LatLng } from '@ionic-native/google-maps';
+
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-/*
-  Generated class for the GeolocationServiceProvider provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular DI.
-*/
 @Injectable()
 export class GeolocationServiceProvider {
 
-  constructor(public http: Http) {
-    console.log('Hello GeolocationServiceProvider Provider');
+  public
+  lat: any;
+  lon: any;
+
+  constructor(public geolocation: Geolocation) {
+    let watch = this.geolocation.watchPosition();
+    watch.subscribe((data) => {
+      this.lat = data.coords.latitude.toString();
+      this.lon = data.coords.longitude.toString();
+    });
   }
 
+  addCoord(){
+    return {lat: this.lat, lon: this.lon}
+  }
 }

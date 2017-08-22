@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
 import {
   GoogleMaps,
   GoogleMap,
   LatLng,
   CameraPosition,
   GoogleMapsEvent } from '@ionic-native/google-maps';
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+
 
 @Component({
   selector: 'page-home',
