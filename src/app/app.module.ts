@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { PostPage } from '../pages/post/post';
 import { ShowPage } from '../pages/show/show';
+import { AllVenturesPage } from './../pages/all-ventures/all-ventures';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +23,8 @@ import { VentureApiServiceProvider } from '../providers/venture-api-service/vent
     HomePage,
     ListPage,
     PostPage,
-    ShowPage
+    ShowPage,
+    AllVenturesPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { VentureApiServiceProvider } from '../providers/venture-api-service/vent
     HomePage,
     ListPage,
     PostPage,
-    ShowPage
+    ShowPage,
+    AllVenturesPage
   ],
   providers: [
     StatusBar,

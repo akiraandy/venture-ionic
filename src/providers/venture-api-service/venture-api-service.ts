@@ -15,6 +15,13 @@ export class VentureApiServiceProvider {
   constructor(public http: Http) {
   }
 
+  requestAllVentures(){
+    return this.http.get(this.url)
+    .do(this.logResponse)
+    .map(this.extractData)
+    .catch(this.catchError)
+  }
+
   requestVenturesNearby(lat: string, lon: string){
     let queryString = '/nearby?' + 'latitude=' + lat + '&longitude=' + lon
     return this.http.get(this.url + queryString)

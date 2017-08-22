@@ -19,7 +19,6 @@ export class ShowPage {
   }
 
   venture(){
-    console.log(this.navParams);
     return this.VASP.getUniqueVenture(this.navParams.get('venture').latitude, this.navParams.get('venture').longitude, this.navParams.get('venture').id)
   }
 
