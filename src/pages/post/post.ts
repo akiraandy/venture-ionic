@@ -19,6 +19,7 @@ import { ShowPage } from './../show/show';
 export class PostPage {
 
   private ventureForm : FormGroup;
+  gps: Boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private VASP: VentureApiServiceProvider, public GSP: GeolocationServiceProvider) {
     this.ventureForm = this.formBuilder.group({
@@ -26,6 +27,10 @@ export class PostPage {
       body: ['', Validators.required],
       genre: [''],
     });
+
+    GSP.geolocation.getCurrentPosition().then((resp) => {
+      this.gps = true;
+    })
   }
 
   createVenture(){  

@@ -28,6 +28,6 @@
     <ion-item>
       <ion-textarea formControlName="body" placeholder="Tell your story here..."></ion-textarea>
     </ion-item>
-    <button ion-button type="submit" [disabled]="!ventureForm.valid">Submit Story</button>
+    <button ion-button type="submit" [disabled]="!ventureForm.valid || !this.gps ">Submit Story</button>
   </form>
 </ion-content>

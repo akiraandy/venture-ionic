@@ -1,4 +1,3 @@
-import { GoogleMaps, GoogleMapsEvent, LatLng } from '@ionic-native/google-maps';
 import { ShowPage } from './../show/show';
 import { VentureApiServiceProvider } from './../../providers/venture-api-service/venture-api-service';
 import { GeolocationServiceProvider } from './../../providers/geolocation-service/geolocation-service';
