@@ -9,7 +9,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { ListPage } from "../list/list";
 import { HomePage } from './../home/home';
-import { ShowPage } from './../show/show';
 
 @IonicPage()
 @Component({

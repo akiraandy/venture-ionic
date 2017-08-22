@@ -15,11 +15,7 @@ export class ShowPage {
   lon: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private VASP: VentureApiServiceProvider) {
-    this.venture().subscribe(data => this.setView(data));
-  }
-
-  venture(){
-    return this.VASP.getUniqueVenture(this.navParams.get('venture').latitude, this.navParams.get('venture').longitude, this.navParams.get('venture').id)
+    this.setView(navParams.get('venture'));
   }
 
   setView(data){

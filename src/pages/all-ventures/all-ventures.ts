@@ -20,10 +20,14 @@ export class AllVenturesPage {
     this.VASP.requestAllVentures().subscribe(data => this.ventureList = data);
   }
 
-  ventureTapped(event, venture) {
-    // That's right, we're pushing to ourselves!
-    this.navCtrl.push(ShowPage, {
-      venture: venture
+  ventureTapped(event, id) {
+    let lat = this.GSP.addCoord().lat;
+    let lon = this.GSP.addCoord().lon;
+    let uniqueVenture = this.VASP.getUniqueVenture(lat, lon, id);
+    uniqueVenture.subscribe(venture => {
+      this.navCtrl.push(ShowPage, {
+        venture: venture
+      });
     });
   }
 
