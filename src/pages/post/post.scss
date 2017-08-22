@@ -1,3 +1,21 @@
 page-post {
+    #post-title {
+    }
 
+    #post-genre {
+        width: 100%;
+        padding-right: 0px;
+
+        ion-label {
+            padding-left: 9px;
+        }
+    }
+
+    #post-body {
+        padding-right: 0px;
+    }
+
+    #venture-submit {
+        margin: 10px 0px 0px 15px;
+    }
 }
