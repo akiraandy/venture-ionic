@@ -12,7 +12,7 @@ export class GeolocationServiceProvider {
   lon: any;
 
   constructor(public geolocation: Geolocation) {
-    let watch = this.geolocation.watchPosition();
+    let watch = this.geolocation.watchPosition({enableHighAccuracy:true});
     watch.subscribe((data) => {
       this.lat = data.coords.latitude.toString();
       this.lon = data.coords.longitude.toString();
