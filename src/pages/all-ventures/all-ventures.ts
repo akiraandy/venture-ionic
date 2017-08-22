@@ -22,7 +22,7 @@ export class AllVenturesPage {
     this.queryList = this.ventureList
     let val = ev.target.value;
     if (!val || !val.trim()) {
-      return this.getAllVentures();
+      return this.ventureList;
     }
     this.queryList = this.query( val )
   }
