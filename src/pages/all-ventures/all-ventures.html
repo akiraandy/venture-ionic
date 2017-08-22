@@ -9,6 +9,7 @@
 
 
 <ion-content padding>
+  <ion-searchbar (ionInput)="getItems($event)" placeholder="Find Ventures"></ion-searchbar>
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content
     pullingText="Pull to refresh ventures..."
