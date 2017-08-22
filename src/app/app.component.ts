@@ -27,7 +27,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'All Ventures', component: AllVenturesPage},
       { title: 'Nearby Ventures', component: ListPage },
-      { title: 'Post Venture', component: PostPage }
+      { title: 'Make Your Own', component: PostPage }
+
     ];
 
   }
