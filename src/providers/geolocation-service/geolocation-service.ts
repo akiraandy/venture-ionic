@@ -2,7 +2,6 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMaps, GoogleMap, LatLng } from '@ionic-native/google-maps';
 
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()

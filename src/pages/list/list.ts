@@ -28,7 +28,7 @@ export class ListPage {
   ventureTapped(event, venture) {
     // That's right, we're pushing to ourselves!
     this.navCtrl.push(ShowPage, {
-      item: venture
+      venture: venture
     });
   }
 
