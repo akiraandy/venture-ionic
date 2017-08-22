@@ -12,28 +12,31 @@ import { GeolocationServiceProvider } from './../../providers/geolocation-servic
 })
 export class AllVenturesPage {
   ventureList = [];
+  queryList = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public VASP: VentureApiServiceProvider, public GSP: GeolocationServiceProvider) {
     this.getAllVentures();
   }
 
   getItems(ev) {
+    this.queryList = this.ventureList
     let val = ev.target.value;
     if (!val || !val.trim()) {
       return this.getAllVentures();
     }
-    this.ventureList = this.query( this.ventureList, val )
+    this.queryList = this.query( val )
   }
 
-  query(list, params) {
+  query( params) {
     let regex = new RegExp(params, "i")
-    return list.filter(venture => venture.name.match(regex));
-    // return this.api.get('/items', params)
-    //   .select(resp => resp.json());
+    return this.ventureList.filter(venture => venture.name.match(regex));
   }
 
   getAllVentures(){
-    this.VASP.requestAllVentures().subscribe(data => this.ventureList = data);
+    this.VASP.requestAllVentures().subscribe(data => {
+      this.ventureList = data;
+      this.queryList = data;
+    })
   }
 
   ventureTapped(event, id) {
