@@ -8,7 +8,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <ion-searchbar (ionInput)="getItems($event)" placeholder="Find Ventures"></ion-searchbar>
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content
@@ -18,11 +18,12 @@
   </ion-refresher>
   <ion-list>
   <button ion-item *ngFor="let venture of queryList" (click)="ventureTapped($event, venture.id)">
-      <ion-icon [name]="venture.icon" item-left></ion-icon>
+    <ion-avatar class="genre-avatar" item-start>
+      <img src="https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAKSAAAAJGI0NWIyMmVlLWZjZDUtNDg1Ni05MGU1LTRkZTk2MTgzYzc3NA.jpg">
+    </ion-avatar>
+    <div class="title-in-list">
       {{venture.name}}
-      <div class="venture-id" item-right>
-        {{venture.id}}
-      </div>
+    </div>  
   </button>
   </ion-list>
 </ion-content>
