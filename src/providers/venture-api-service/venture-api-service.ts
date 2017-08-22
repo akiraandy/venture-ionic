@@ -5,6 +5,7 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Observable';
 
+
 @Injectable()
 export class VentureApiServiceProvider {
 
@@ -13,6 +14,13 @@ export class VentureApiServiceProvider {
   url: string = "https://venture-ionic-api.herokuapp.com/segments";
 
   constructor(public http: Http) {
+  }
+
+  requestAllVentures(){
+    return this.http.get(this.url)
+    .do(this.logResponse)
+    .map(this.extractData)
+    .catch(this.catchError)
   }
 
   requestVenturesNearby(lat: string, lon: string){

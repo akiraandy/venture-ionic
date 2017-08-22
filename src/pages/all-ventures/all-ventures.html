@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>All Ventures</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+    pullingText="Pull to refresh ventures..."
+    refreshingSpinner="dots">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+  <button ion-item *ngFor="let venture of ventureList" (click)="ventureTapped($event, venture.id)">
+      <ion-icon [name]="venture.icon" item-left></ion-icon>
+      {{venture.name}}
+      <div class="venture-id" item-right>
+        {{venture.id}}
+      </div>
+  </button>
+  </ion-list>
+</ion-content>
