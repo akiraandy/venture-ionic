@@ -4,6 +4,7 @@ import { ShowPage } from './../show/show';
 import { VentureApiServiceProvider } from './../../providers/venture-api-service/venture-api-service';
 import { GeolocationServiceProvider } from './../../providers/geolocation-service/geolocation-service';
 
+
 @IonicPage()
 @Component({
   selector: 'page-all-ventures',
@@ -11,13 +12,31 @@ import { GeolocationServiceProvider } from './../../providers/geolocation-servic
 })
 export class AllVenturesPage {
   ventureList = [];
+  queryList = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public VASP: VentureApiServiceProvider, public GSP: GeolocationServiceProvider) {
     this.getAllVentures();
   }
 
+  getItems(ev) {
+    this.queryList = this.ventureList
+    let val = ev.target.value;
+    if (!val || !val.trim()) {
+      return this.ventureList;
+    }
+    this.queryList = this.query( val )
+  }
+
+  query( params) {
+    let regex = new RegExp(params, "i")
+    return this.ventureList.filter(venture => venture.name.match(regex));
+  }
+
   getAllVentures(){
-    this.VASP.requestAllVentures().subscribe(data => this.ventureList = data);
+    this.VASP.requestAllVentures().subscribe(data => {
+      this.ventureList = data;
+      this.queryList = data;
+    })
   }
 
   ventureTapped(event, id) {

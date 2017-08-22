@@ -9,6 +9,7 @@
 
 
 <ion-content padding>
+  <ion-searchbar (ionInput)="getItems($event)" placeholder="Find Ventures"></ion-searchbar>
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content
     pullingText="Pull to refresh ventures..."
@@ -16,7 +17,7 @@
     </ion-refresher-content>
   </ion-refresher>
   <ion-list>
-  <button ion-item *ngFor="let venture of ventureList" (click)="ventureTapped($event, venture.id)">
+  <button ion-item *ngFor="let venture of queryList" (click)="ventureTapped($event, venture.id)">
       <ion-icon [name]="venture.icon" item-left></ion-icon>
       {{venture.name}}
       <div class="venture-id" item-right>

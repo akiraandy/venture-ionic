@@ -12,6 +12,7 @@ import { NavController, NavParams } from 'ionic-angular';
 export class ListPage {
 
   ventureList = [];
+  queryList = [];
   selectedItem: any;
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
@@ -20,8 +21,22 @@ export class ListPage {
     this.getNearbyVentures();
   }
 
+  getItems(ev) {
+    this.queryList = this.ventureList
+    let val = ev.target.value;
+    if (!val || !val.trim()) {
+      return this.ventureList;
+    }
+    this.queryList = this.query( val )
+  }
+
+  query( params) {
+    let regex = new RegExp(params, "i")
+    return this.ventureList.filter(venture => venture.name.match(regex));
+  }
+
   getNearbyVentures(){
-    this.VASP.requestVenturesNearby(this.GSP.lat, this.GSP.lon).subscribe(data => this.ventureList = data);
+    this.VASP.requestVenturesNearby(this.GSP.lat, this.GSP.lon).subscribe(data => {this.ventureList = data; this.queryList = data});
   }
 
   ventureTapped(event, venture) {

@@ -26,11 +26,8 @@ export class PostPage {
       body: ['', Validators.required],
       genre: [''],
     });
-
-    GSP.geolocation.getCurrentPosition().then((resp) => {
-      this.gps = true;
-    })
   }
+  
 
   createVenture(){  
     let venture = this.ventureForm.value
