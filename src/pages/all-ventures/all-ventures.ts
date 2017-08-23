@@ -60,4 +60,8 @@ export class AllVenturesPage {
     }, 1000);
   }
 
+  showList(){
+    console.log("STUFF");
+  }
+
 }
