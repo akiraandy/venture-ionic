@@ -45,7 +45,7 @@ export class HomePage {
         zoom: 17
       }
 
-      this.VPS.requestVenturesNearby(this.lat, this.lon).subscribe(data => 
+      this.VPS.requestAllVentures().subscribe(data => 
         data.forEach(venture => {
         let markerOptions: MarkerOptions = {position: new LatLng(+venture.latitude, +venture.longitude)}
         map.addMarker(markerOptions).then((marker) => {
