@@ -8,8 +8,8 @@
 </ion-header>
 
 
-<ion-content>
-<form [formGroup]="ventureForm" (ngSubmit)="submitForm(); goToPostShow()">
+<ion-content> 
+  <form [formGroup]="ventureForm" (ngSubmit)="submitForm(); goToPostShow()">
     <ion-item id="post-title">
       <ion-input formControlName="name" placeholder="Title"></ion-input>
     </ion-item> 

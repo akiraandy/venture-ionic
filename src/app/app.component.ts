@@ -28,7 +28,6 @@ export class MyApp {
       { title: 'Nearby Ventures', component: ListPage },
       { title: 'All Ventures', component: AllVenturesPage},
       { title: 'Make Your Own', component: PostPage }
-
     ];
 
   }

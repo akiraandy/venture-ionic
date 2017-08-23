@@ -39,6 +39,14 @@ export class AllVenturesPage {
     })
   }
 
+  
+  getGenreSegments() {
+    // genre id param instead of hard code
+    this.VASP.getGenres("9").subscribe(data => {
+      console.log(data);
+    });
+  }
+
   ventureTapped(event, id) {
     let lat = this.GSP.addCoord().lat;
     let lon = this.GSP.addCoord().lon;

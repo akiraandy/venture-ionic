@@ -8,6 +8,21 @@
 </ion-header>
 
 <ion-content>
+  
+    <form [formGroup]="ventureForm">
+      <ion-item id="post-genre">
+        <ion-label>Genres</ion-label>
+        <ion-select formControlName="genre" multiple="true">
+          <ion-option value="fiction">Fiction</ion-option>
+          <ion-option value="non-fiction">Non-fiction</ion-option>
+          <ion-option value="adventure">Adventure</ion-option>
+          <ion-option value="comedy">Comedy</ion-option>
+          <ion-option value="horror">Horror</ion-option>
+          <ion-option value="romance">Romance</ion-option>
+        </ion-select>
+      </ion-item>
+    </form>
+
   <ion-searchbar (ionInput)="getItems($event)" placeholder="Find Ventures"></ion-searchbar>
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content

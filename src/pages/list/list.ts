@@ -3,6 +3,7 @@ import { VentureApiServiceProvider } from './../../providers/venture-api-service
 import { GeolocationServiceProvider } from './../../providers/geolocation-service/geolocation-service';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -11,14 +12,19 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ListPage {
 
+  private ventureForm : FormGroup;
+
   ventureList = [];
   queryList = [];
   selectedItem: any;
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private VASP: VentureApiServiceProvider, public GSP: GeolocationServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private VASP: VentureApiServiceProvider, public GSP: GeolocationServiceProvider) {
     this.getNearbyVentures();
+    this.ventureForm = this.formBuilder.group({
+      genre: ['']
+    });
   }
 
   getItems(ev) {

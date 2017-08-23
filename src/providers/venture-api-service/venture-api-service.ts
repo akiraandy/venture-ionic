@@ -12,6 +12,7 @@ export class VentureApiServiceProvider {
   private
   
   url: string = "https://venture-ionic-api.herokuapp.com/segments";
+  genre_url: string = "https://venture-ionic-api.herokuapp.com/genres";
 
   constructor(public http: Http) {
   }
@@ -34,6 +35,24 @@ export class VentureApiServiceProvider {
   getUniqueVenture(lat: string, lon: string, id: string){
     let queryString = '/' + id + "/?" + 'latitude=' + lat + '&longitude=' + lon
     return this.http.get(this.url + queryString)
+    .do(this.logResponse)
+    .map(this.extractData)
+    .catch(this.catchError)
+  }
+
+  getGenres(id: string){
+    let queryString = '/' + id + '/segments'
+    console.log(queryString);
+    return this.http.get(this.genre_url + queryString)
+    .do(this.logResponse)
+    .map(this.extractData)
+    .catch(this.catchError)
+  }
+
+  filterGenres(genre_names: string){
+    let queryString = '/?genres=' + genre_names
+    console.log(queryString);
+    return this.http.get(this.genre_url + queryString)
     .do(this.logResponse)
     .map(this.extractData)
     .catch(this.catchError)
