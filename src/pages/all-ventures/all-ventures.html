@@ -4,12 +4,17 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>All Ventures</ion-title>
+    <ion-buttons id="genreCog" ion-button icon-only end clear>
+        <ion-icon name="cog"></ion-icon>
+    </ion-buttons>
   </ion-navbar>
+  
 </ion-header>
 
 
 <ion-content padding>
-  <ion-searchbar (ionInput)="getItems($event)" placeholder="Find Ventures"></ion-searchbar>
+  <ion-searchbar id="searchbar" (ionInput)="getItems($event)" placeholder="Find Ventures"></ion-searchbar>
+  
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content
     pullingText="Pull to refresh ventures..."

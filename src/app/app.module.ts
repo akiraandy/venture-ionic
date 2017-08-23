@@ -16,6 +16,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { GeolocationServiceProvider } from '../providers/geolocation-service/geolocation-service';
 import { VentureApiServiceProvider } from '../providers/venture-api-service/venture-api-service';
+import { GenreFilterProvider } from '../providers/genre-filter/genre-filter';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { VentureApiServiceProvider } from '../providers/venture-api-service/vent
     GeolocationServiceProvider,
     VentureApiServiceProvider,
     GoogleMaps,
-    Geolocation
+    Geolocation,
+    GenreFilterProvider
   ]
 })
 export class AppModule {}

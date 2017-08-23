@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { ShowPage } from './../show/show';
 import { VentureApiServiceProvider } from './../../providers/venture-api-service/venture-api-service';
 import { GeolocationServiceProvider } from './../../providers/geolocation-service/geolocation-service';
@@ -11,10 +11,11 @@ import { GeolocationServiceProvider } from './../../providers/geolocation-servic
   templateUrl: 'all-ventures.html',
 })
 export class AllVenturesPage {
+  genres = [];
   ventureList = [];
   queryList = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public VASP: VentureApiServiceProvider, public GSP: GeolocationServiceProvider) {
+  constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public VASP: VentureApiServiceProvider, public GSP: GeolocationServiceProvider) {
     this.getAllVentures();
   }
 
