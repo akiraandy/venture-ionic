@@ -9,6 +9,7 @@ import {
 import { VentureApiServiceProvider } from './../../providers/venture-api-service/venture-api-service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DecimalPipe } from '@angular/common';
 
 @IonicPage()
 @Component({
