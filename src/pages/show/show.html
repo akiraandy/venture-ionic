@@ -3,17 +3,28 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Venture</ion-title>
+    <ion-title style="text-align: center">Venture</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-<p>{{this.name}}</p>
+  <h6 id="show-title">{{ this.name }}</h6>
 
-<p>{{this.body}}</p>
+  <p id="body-show-text">{{ this.body }}</p>
 
-<p>Latitude: {{this.lat}} {{this.lon}}</p>
+  <div #map id="map" style="height: 25%; width: 90%; margin: auto;"></div>
 
-<div #map id="map" style="height: 25%;"></div>
+  <ion-grid>
+    <ion-row>
+      <ion-col id="lat-info">
+        <div class="ll-coords">{{ this.lat }}</div>
+        <div class="ll-label">Latitude</div>
+      </ion-col>
+      <ion-col id="lon-info">
+        <div class="ll-coords">{{ this.lon }}</div>
+        <div class="ll-label">Longitute</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
