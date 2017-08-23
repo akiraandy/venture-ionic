@@ -32,7 +32,7 @@ export class HomePage {
         this.loadMap();
       });
     });
-  } 
+  }
 
   loadMap(){
     let element: HTMLElement = document.getElementById('map');
@@ -45,7 +45,12 @@ export class HomePage {
         zoom: 17
       }
 
-      this.VPS.requestAllVentures().subscribe(data => 
+
+    let userMarkerOptions : MarkerOptions = { position: latlng, icon: 'rgb(66, 125, 244)', title: 'You are here!'
+    }
+    let userMarker = map.addMarker(userMarkerOptions)
+
+      this.VPS.requestAllVentures().subscribe(data =>
         data.forEach(venture => {
         let markerOptions: MarkerOptions = {position: new LatLng(+venture.latitude, +venture.longitude)}
         map.addMarker(markerOptions).then((marker) => {
@@ -59,10 +64,10 @@ export class HomePage {
           });
         });
       }));
-      
+
       map.moveCamera(position);
     });
-  } 
+  }
 
   presentAlert(){
     let alert = this.alertCtrl.create({
@@ -72,5 +77,5 @@ export class HomePage {
     });
     alert.present();
   }
-  
+
 }
