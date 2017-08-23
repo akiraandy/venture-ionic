@@ -14,6 +14,7 @@ import { GeolocationServiceProvider } from './../../providers/geolocation-servic
   templateUrl: 'all-ventures.html',
 })
 export class AllVenturesPage {
+  modal: any;
   ventureList = [];
   queryList = [];
   genres = {
@@ -33,9 +34,27 @@ export class AllVenturesPage {
   openModal(){
     let modal = this.modalCtrl.create(GenreFilterModalPage, {genres: this.genres});
     modal.present();
+    modal.onDidDismiss(dismiss => {
+      this.getAllVentures();
+    });
   }
 
- 
+
+
+
+  ionViewWillEnter(){
+    this.getAllVentures();
+  }
+
+  returnSelectedGenres(){
+    let selectedGenres: string = "";
+    for(let genre in this.genres) {
+      if (this.genres[genre]) {
+        selectedGenres += genre + ","
+      }
+    }
+    return selectedGenres;
+  }
 
   getItems(ev) {
     this.queryList = this.ventureList
@@ -52,7 +71,7 @@ export class AllVenturesPage {
   }
 
   getAllVentures(){
-    this.VASP.requestAllVentures().subscribe(data => {
+    this.VASP.filterGenres(this.returnSelectedGenres()).subscribe(data => {
       this.ventureList = data;
       this.queryList = data;
     })
