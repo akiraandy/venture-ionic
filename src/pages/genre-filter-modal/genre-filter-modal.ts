@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+
 
 @IonicPage()
 @Component({
@@ -7,12 +8,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'genre-filter-modal.html',
 })
 export class GenreFilterModalPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  genres = {};
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+    this.genres = navParams.get("genres");
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GenreFilterModalPage');
+  dismiss() {
+    this.viewCtrl.dismiss();
   }
+
+
 
 }

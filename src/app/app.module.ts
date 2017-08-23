@@ -8,6 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { PostPage } from '../pages/post/post';
 import { ShowPage } from '../pages/show/show';
 import { AllVenturesPage } from './../pages/all-ventures/all-ventures';
+import { GenreFilterModalPage } from './../pages/genre-filter-modal/genre-filter-modal';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -18,6 +19,7 @@ import { GeolocationServiceProvider } from '../providers/geolocation-service/geo
 import { VentureApiServiceProvider } from '../providers/venture-api-service/venture-api-service';
 import { GenreFilterProvider } from '../providers/genre-filter/genre-filter';
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -25,7 +27,8 @@ import { GenreFilterProvider } from '../providers/genre-filter/genre-filter';
     ListPage,
     PostPage,
     ShowPage,
-    AllVenturesPage
+    AllVenturesPage,
+    GenreFilterModalPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { GenreFilterProvider } from '../providers/genre-filter/genre-filter';
     ListPage,
     PostPage,
     ShowPage,
-    AllVenturesPage
+    AllVenturesPage,
+    GenreFilterModalPage
   ],
   providers: [
     StatusBar,

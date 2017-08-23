@@ -1,13 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">Close</button>
+    </ion-buttons>
+    <ion-title>Modals</ion-title>
+  </ion-navbar>
+</ion-header>
+
 <ion-content padding>
+  <ion-list>
     <ion-item>
-        <ion-label>Genre</ion-label>
-        <ion-select [(ngModel)]="genres" multiple="true">
-          <ion-option value="nes">NES</ion-option>
-          <ion-option value="n64">Nintendo64</ion-option>
-          <ion-option value="ps">PlayStation</ion-option>
-          <ion-option value="genesis">Sega Genesis</ion-option>
-          <ion-option value="saturn">Sega Saturn</ion-option>
-          <ion-option value="snes">SNES</ion-option>
-        </ion-select>
-      </ion-item>
+      <ion-label>Fiction</ion-label>
+      <ion-checkbox [(ngModel)]="genres.fiction"></ion-checkbox>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Non-fiction</ion-label>
+      <ion-checkbox [(ngModel)]="genres['non-fiction']"></ion-checkbox>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Adventure</ion-label>
+      <ion-checkbox [(ngModel)]="genres.adventure"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Comedy</ion-label>
+      <ion-checkbox [(ngModel)]="genres.comedy"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Horror</ion-label>
+      <ion-checkbox [(ngModel)]="genres.horror"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Romance</ion-label>
+      <ion-checkbox [(ngModel)]="genres.romance"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Other</ion-label>
+      <ion-checkbox [(ngModel)]="genres['other']"></ion-checkbox>
+    </ion-item>
+  </ion-list>
 </ion-content>

@@ -1,8 +1,11 @@
+import { GenreFilterModalPage } from './../genre-filter-modal/genre-filter-modal';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController} from 'ionic-angular';
 import { ShowPage } from './../show/show';
 import { VentureApiServiceProvider } from './../../providers/venture-api-service/venture-api-service';
 import { GeolocationServiceProvider } from './../../providers/geolocation-service/geolocation-service';
+
+
 
 
 @IonicPage()
@@ -11,13 +14,28 @@ import { GeolocationServiceProvider } from './../../providers/geolocation-servic
   templateUrl: 'all-ventures.html',
 })
 export class AllVenturesPage {
-  genres = [];
   ventureList = [];
   queryList = [];
+  genres = {
+    "fiction": false,
+    "non-ficiton": false,
+    "adventure": false,
+    "comedy": false,
+    "horror": false,
+    "romance": false,
+    "other": false
+  };
 
   constructor(public modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public VASP: VentureApiServiceProvider, public GSP: GeolocationServiceProvider) {
     this.getAllVentures();
   }
+
+  openModal(){
+    let modal = this.modalCtrl.create(GenreFilterModalPage, {genres: this.genres});
+    modal.present();
+  }
+
+ 
 
   getItems(ev) {
     this.queryList = this.ventureList
