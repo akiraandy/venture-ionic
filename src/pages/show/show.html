@@ -18,11 +18,11 @@
   <ion-grid>
     <ion-row>
       <ion-col id="lat-info">
-        <div class="ll-coords">{{ this.lat }}</div>
+        <div class="ll-coords">{{ this.lat | number:'1.2-2' }}</div>
         <div class="ll-label">Latitude</div>
       </ion-col>
       <ion-col id="lon-info">
-        <div class="ll-coords">{{ this.lon }}</div>
+        <div class="ll-coords">{{ this.lon | number:'1.2-2' }}</div>
         <div class="ll-label">Longitute</div>
       </ion-col>
     </ion-row>
