@@ -11,8 +11,7 @@ import { VentureApiServiceProvider } from './../../providers/venture-api-service
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
-
-
+import { DecimalPipe } from '@angular/common';
 
 @IonicPage()
 @Component({
