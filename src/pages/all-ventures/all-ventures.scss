@@ -1,3 +1,18 @@
 page-all-ventures {
+    .item-md {
+        padding-left: 10px;
 
+        ion-avatar[item-left] {
+            margin: 0px 0px 0px 0;
+        }
+        ion-thumbnail[item-left] {
+            margin: 0px 0px 0px 0;
+        }
+        ion-avatar[item-start] {
+            margin: 0px 0px 0px 0;
+        }
+        ion-thumbnail[item-start] {
+            margin: 0px 0px 0px 0;
+        }
+    }
 }
