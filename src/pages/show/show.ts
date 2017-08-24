@@ -83,6 +83,7 @@ export class ShowPage {
   presentLoading() {
     let loader = this.loadingCtrl.create({
       content: "Please wait...",
+      spinner: 'dots',
       duration: 3000
     });
     loader.present();
