@@ -15,7 +15,7 @@
     </ion-item>
     <ion-item id="post-genre">
       <ion-label>Genres</ion-label>
-      <ion-select formControlName="genre" multiple="false">
+      <ion-select formControlName="genre" multiple="true">
         <ion-option value="fiction">Fiction</ion-option>
         <ion-option value="non-fiction">Non-fiction</ion-option>
         <ion-option value="adventure">Adventure</ion-option>
@@ -25,10 +25,10 @@
       </ion-select>
     </ion-item>
     <ion-item id="post-body">
-      <ion-textarea rows="9" formControlName="body" placeholder="Tell a story here..."></ion-textarea>
+      <ion-textarea rows="16" formControlName="body" placeholder="Tell a story here..."></ion-textarea>
     </ion-item>
     <div text-center>
-      <button round large id="venture-submit" name="send" ion-button type="submit" [disabled]="!ventureForm.valid || !this.GSP.lat && !this.GSP.lon ">
+      <button ion-button id="venture-submit" name="send" ion-button type="submit" [disabled]="!ventureForm.valid || !this.GSP.lat && !this.GSP.lon ">
         <ion-icon name="send"></ion-icon>
       </button>
     </div>
