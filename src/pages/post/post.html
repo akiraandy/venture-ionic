@@ -25,8 +25,12 @@
       </ion-select>
     </ion-item>
     <ion-item id="post-body">
-      <ion-textarea rows="9" formControlName="body" placeholder="Tell a story here..."></ion-textarea>
+      <ion-textarea rows="12" formControlName="body" placeholder="Tell a story here..."></ion-textarea>
     </ion-item>
-    <button id="venture-submit" ion-button type="submit" [disabled]="!ventureForm.valid || !this.GSP.lat && !this.GSP.lon ">Submit Story</button>
+    <div text-center>
+      <button ion-button id="venture-submit" name="send" ion-button type="submit" [disabled]="!ventureForm.valid || !this.GSP.lat && !this.GSP.lon ">
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </div>
   </form>
 </ion-content>

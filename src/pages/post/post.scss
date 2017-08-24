@@ -1,5 +1,6 @@
 page-post {
     #post-title {
+        margin-top: 1em;
     }
 
     #post-genre {
@@ -13,9 +14,12 @@ page-post {
 
     #post-body {
         padding-right: 0px;
+
     }
 
     #venture-submit {
-        margin: 10px 0px 0px 15px;
+        margin-top: 12%;
+        padding: 25px;
+        font-size: 32px;
     }
 }
