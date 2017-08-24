@@ -12,10 +12,10 @@
 <form [formGroup]="ventureForm" (ngSubmit)="submitForm(); goToPostShow()">
     <ion-item id="post-title">
       <ion-input formControlName="name" placeholder="Title"></ion-input>
-    </ion-item> 
+    </ion-item>
     <ion-item id="post-genre">
       <ion-label>Genres</ion-label>
-      <ion-select formControlName="genre" multiple="true">
+      <ion-select formControlName="genre" multiple="false">
         <ion-option value="fiction">Fiction</ion-option>
         <ion-option value="non-fiction">Non-fiction</ion-option>
         <ion-option value="adventure">Adventure</ion-option>
