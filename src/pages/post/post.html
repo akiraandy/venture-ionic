@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Venture</ion-title>
+    <ion-title>Make Your Own</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -12,7 +12,7 @@
 <form [formGroup]="ventureForm" (ngSubmit)="submitForm(); goToPostShow()">
     <ion-item id="post-title">
       <ion-input formControlName="name" placeholder="Title"></ion-input>
-    </ion-item> 
+    </ion-item>
     <ion-item id="post-genre">
       <ion-label>Genres</ion-label>
       <ion-select formControlName="genre" multiple="true">

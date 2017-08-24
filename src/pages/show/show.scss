@@ -1,5 +1,18 @@
 page-show {
-    // ion-title {
-    //     color: color($colors, primary);
-    // }
+    #show-title {
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    #lat-info {
+        text-align: center;
+    }
+    
+    #lon-info {
+        text-align: center;
+    }
+
+    .ll-label {
+        font-size: 11px;
+    }
 }
