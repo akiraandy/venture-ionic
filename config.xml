@@ -36,12 +36,12 @@
         <splash density="land-xhdpi" src="resources/android/splash/adventure2.png" />
         <splash density="land-xxhdpi" src="resources/android/splash/adventure2.png" />
         <splash density="land-xxxhdpi" src="resources/android/splash/adventure2.png" />
-        <splash density="port-ldpi" src="resources/android/splash/adventure2.png" />
-        <splash density="port-mdpi" src="resources/android/splash/adventure2.png" />
-        <splash density="port-hdpi" src="resources/android/splash/adventure2.png" />
-        <splash density="port-xhdpi" src="resources/android/splash/adventure2.png" />
-        <splash density="port-xxhdpi" src="resources/android/splash/adventure2.png" />
-        <splash density="port-xxxhdpi" src="resources/android/splash/adventure2.png" />
+        <splash density="port-ldpi" src="resources/android/splash/drawable-port-ldpi-adventure-splash.png" />
+        <splash density="port-mdpi" src="resources/android/splash/drawable-port-mdpi-adventure-splash.png" />
+        <splash density="port-hdpi" src="resources/android/splash/drawable-port-hdpi-adventure-splash.png" />
+        <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-adventure-splash.png" />
+        <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-adventure-splash.png" />
+        <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-adventure-splash.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
