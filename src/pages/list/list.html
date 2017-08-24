@@ -18,11 +18,11 @@
   <ion-list>
   <button ion-item *ngFor="let venture of queryList" (click)="ventureTapped($event, venture)">
     <ion-avatar class="genre-avatar" item-start>
-      <img src="../assets/img/{{ venture.genre }}.png">
+      <img src="assets/img/{{ venture.genre }}.png">
     </ion-avatar>
     <div class="title-in-list">
       {{venture.name}}
-    </div>  
+    </div>
   </button>
   </ion-list>
 </ion-content>
