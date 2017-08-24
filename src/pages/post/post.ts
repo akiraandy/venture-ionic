@@ -1,3 +1,4 @@
+
 import { GeolocationServiceProvider } from './../../providers/geolocation-service/geolocation-service';
 import { VentureApiServiceProvider } from './../../providers/venture-api-service/venture-api-service';
 
@@ -16,11 +17,10 @@ import { HomePage } from './../home/home';
   templateUrl: 'post.html',
 })
 export class PostPage {
-
   private ventureForm : FormGroup;
   gps: Boolean = false;
-
   constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, private VASP: VentureApiServiceProvider, public GSP: GeolocationServiceProvider) {
+    
     this.ventureForm = this.formBuilder.group({
       name: ['', Validators.required],
       body: ['', Validators.required],
