@@ -2,10 +2,10 @@
 
 ### Contributors
 
-* name
-* name
-* name
-* name
+* Qymana Botts
+* Michael Knapp
+* Zackary Taylor
+* Andy Schwartz
 
 ### Project Description
 
