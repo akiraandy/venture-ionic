@@ -18,13 +18,21 @@ Venture is a location-based storytelling app built with a front-end using the Io
 ````
 npm install -g cordova ionic
 ````
-3. Then run:
- ````
- ionic cordova run android
- ````
+
  
 
 
 ### Useage
 
-
+To run the app on a connected device, run:
+ ````
+ ionic cordova run android
+ ````
+ Otherwise, you can serve the application to your browser with the command:
+ ````
+ ionic serve
+ ````
+ or
+ ````
+ ionic lab
+ ````
