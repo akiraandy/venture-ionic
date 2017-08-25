@@ -23,9 +23,14 @@
   font-family: Work;
 }
 
+.toolbar-background {
+  background-color: #5fc2ad;
+}
+
 .toolbar-title-md {
     text-align: center;
 }
+
 .toolbar-md ion-title {
     position: absolute;
     top: 0;
@@ -35,9 +40,11 @@
     height: 100%;
     pointer-events: none;
 }
+
 .toolbar-title-wp {
     text-align: center;
 }
+
 .toolbar-wp ion-title {
     position: absolute;
     top: 0;
