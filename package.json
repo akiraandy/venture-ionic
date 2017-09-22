@@ -62,7 +62,7 @@
             "cordova-plugin-whitelist": {},
             "ionic-plugin-keyboard": {},
             "cordova-plugin-googlemaps": {
-                "API_KEY_FOR_ANDROID": "AIzaSyCNgvcoEOhn1FZz5FkiQ-UwL-Efk-qSM5U"
+                "API_KEY_FOR_ANDROID": ""
             }
         },
         "platforms": [
